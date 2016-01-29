@@ -12,22 +12,21 @@
  * the License.
  */
 
-package tokyo.tommykw.tv;
+package tokyo.tommykw.tv
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.app.Activity
+import android.os.Bundle
 
 /*
  * MainActivity class that loads MainFragment
  */
-public class MainActivity extends Activity {
+class MainActivity : Activity() {
     /**
      * Called when the activity is first created.
      */
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
     }
 }
