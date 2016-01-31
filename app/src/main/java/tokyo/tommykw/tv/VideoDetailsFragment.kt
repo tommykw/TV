@@ -73,7 +73,7 @@ class VideoDetailsFragment : DetailsFragment() {
             setupDetailsOverviewRowPresenter()
             setupMovieListRow()
             setupMovieListRowPresenter()
-            updateBackground(mSelectedMovie!!.backgroundImageUrl)
+            updateBackground(mSelectedMovie!!.backgroundImageUrl!!)
             onItemViewClickedListener = ItemViewClickedListener()
         } else {
             val intent = Intent(activity, MainActivity::class.java)
@@ -143,15 +143,15 @@ class VideoDetailsFragment : DetailsFragment() {
         detailsPresenter.setSharedElementEnterTransition(activity,
                 DetailsActivity.SHARED_ELEMENT_NAME)
 
-        detailsPresenter.onActionClickedListener = { action ->
-            if (action.id == ACTION_WATCH_TRAILER.toLong()) {
-                val intent = Intent(activity, PlaybackOverlayActivity::class.java)
-                intent.putExtra(DetailsActivity.MOVIE, mSelectedMovie)
-                startActivity(intent)
-            } else {
-                Toast.makeText(activity, action.toString(), Toast.LENGTH_SHORT).show()
-            }
-        }
+//        detailsPresenter.onActionClickedListener = { action ->
+//            if (action.id == ACTION_WATCH_TRAILER.toLong()) {
+//                val intent = Intent(activity, PlaybackOverlayActivity::class.java)
+//                intent.putExtra(DetailsActivity.MOVIE, mSelectedMovie)
+//                startActivity(intent)
+//            } else {
+//                Toast.makeText(activity, action.toString(), Toast.LENGTH_SHORT).show()
+//            }
+//        }
         mPresenterSelector!!.addClassPresenter(DetailsOverviewRow::class.java, detailsPresenter)
     }
 
