@@ -12,10 +12,11 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view
 
 import android.app.Activity
 import android.os.Bundle
+import tokyo.tommykw.tv.R
 
 /*
  * MainActivity class that loads MainFragment
