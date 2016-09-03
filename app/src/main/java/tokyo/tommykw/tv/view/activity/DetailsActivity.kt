@@ -12,22 +12,28 @@
  * the License.
  */
 
-package tokyo.tommykw.tv.view
+package tokyo.tommykw.tv.view.activity
 
 import android.app.Activity
 import android.os.Bundle
 import tokyo.tommykw.tv.R
 
 /*
- * MainActivity class that loads MainFragment
+ * Details activity class that loads LeanbackDetailsFragment class
  */
-class MainActivity : Activity() {
+class DetailsActivity : Activity() {
+
     /**
      * Called when the activity is first created.
      */
-
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_details)
     }
+
+    companion object {
+        val SHARED_ELEMENT_NAME = "hero"
+        val MOVIE = "Movie"
+    }
+
 }

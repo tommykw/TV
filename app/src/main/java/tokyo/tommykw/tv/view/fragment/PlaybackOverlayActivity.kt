@@ -12,7 +12,7 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.fragment
 
 import android.app.Activity
 import android.graphics.Bitmap
@@ -28,6 +28,9 @@ import android.widget.VideoView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import tokyo.tommykw.tv.Movie
+import tokyo.tommykw.tv.view.fragment.PlaybackOverlayFragment
+import tokyo.tommykw.tv.R
 
 /**
  * PlaybackOverlayActivity for video playback that loads PlaybackOverlayFragment

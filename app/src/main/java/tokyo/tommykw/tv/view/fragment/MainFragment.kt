@@ -12,7 +12,7 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.fragment
 
 import java.net.URI
 import java.util.Collections
@@ -49,6 +49,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.GlideDrawable
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import tokyo.tommykw.tv.Movie
+import tokyo.tommykw.tv.MovieList
+import tokyo.tommykw.tv.R
+import tokyo.tommykw.tv.view.activity.BrowseErrorActivity
+import tokyo.tommykw.tv.view.activity.DetailsActivity
 import tokyo.tommykw.tv.view.presenter.CardPresenter
 
 class MainFragment : BrowseFragment() {
@@ -130,7 +135,7 @@ class MainFragment : BrowseFragment() {
         // R.drawable.videos_by_google_banner));
         title = getString(R.string.browse_title) // Badge, when set, takes precedent
         // over title
-        headersState = BrowseFragment.HEADERS_ENABLED
+        headersState = HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
 
         // set fastLane (or headers) background color
@@ -215,7 +220,7 @@ class MainFragment : BrowseFragment() {
     }
 
     private inner class GridItemPresenter : Presenter() {
-        override fun onCreateViewHolder(parent: ViewGroup): Presenter.ViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
             val view = TextView(parent.context)
             view.layoutParams = ViewGroup.LayoutParams(GRID_ITEM_WIDTH, GRID_ITEM_HEIGHT)
             view.isFocusable = true
@@ -223,14 +228,14 @@ class MainFragment : BrowseFragment() {
             view.setBackgroundColor(resources.getColor(R.color.default_background))
             view.setTextColor(Color.WHITE)
             view.gravity = Gravity.CENTER
-            return Presenter.ViewHolder(view)
+            return ViewHolder(view)
         }
 
-        override fun onBindViewHolder(viewHolder: Presenter.ViewHolder, item: Any) {
+        override fun onBindViewHolder(viewHolder: ViewHolder, item: Any) {
             (viewHolder.view as TextView).text = item as String
         }
 
-        override fun onUnbindViewHolder(viewHolder: Presenter.ViewHolder) {
+        override fun onUnbindViewHolder(viewHolder: ViewHolder) {
         }
     }
 

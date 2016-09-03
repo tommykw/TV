@@ -12,7 +12,7 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.fragment
 
 import android.app.Activity
 
@@ -52,7 +52,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.GlideDrawable
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
+import tokyo.tommykw.tv.Movie
+import tokyo.tommykw.tv.MovieList
+import tokyo.tommykw.tv.R
+import tokyo.tommykw.tv.view.activity.DetailsActivity
 import tokyo.tommykw.tv.view.presenter.CardPresenter
+import java.lang.Long
 
 import java.util.ArrayList
 import java.util.HashMap
@@ -216,10 +221,10 @@ class PlaybackOverlayFragment : android.support.v17.leanback.app.PlaybackOverlay
         mThumbsUpAction = ThumbsUpAction(activity)
         mThumbsDownAction = ThumbsDownAction(activity)
         mShuffleAction = ShuffleAction(activity)
-        mSkipNextAction = PlaybackControlsRow.SkipNextAction(activity)
-        mSkipPreviousAction = PlaybackControlsRow.SkipPreviousAction(activity)
-        mFastForwardAction = PlaybackControlsRow.FastForwardAction(activity)
-        mRewindAction = PlaybackControlsRow.RewindAction(activity)
+        mSkipNextAction = SkipNextAction(activity)
+        mSkipPreviousAction = SkipPreviousAction(activity)
+        mFastForwardAction = FastForwardAction(activity)
+        mRewindAction = RewindAction(activity)
 
         if (PRIMARY_CONTROLS > 5) {
             mPrimaryActionsAdapter!!.add(mThumbsUpAction)
@@ -228,11 +233,11 @@ class PlaybackOverlayFragment : android.support.v17.leanback.app.PlaybackOverlay
         }
         mPrimaryActionsAdapter!!.add(mSkipPreviousAction)
         if (PRIMARY_CONTROLS > 3) {
-            mPrimaryActionsAdapter!!.add(PlaybackControlsRow.RewindAction(activity))
+            mPrimaryActionsAdapter!!.add(RewindAction(activity))
         }
         mPrimaryActionsAdapter!!.add(mPlayPauseAction)
         if (PRIMARY_CONTROLS > 3) {
-            mPrimaryActionsAdapter!!.add(PlaybackControlsRow.FastForwardAction(activity))
+            mPrimaryActionsAdapter!!.add(FastForwardAction(activity))
         }
         mPrimaryActionsAdapter!!.add(mSkipNextAction)
 
@@ -346,7 +351,7 @@ class PlaybackOverlayFragment : android.support.v17.leanback.app.PlaybackOverlay
     }
 
     internal class DescriptionPresenter : AbstractDetailsDescriptionPresenter() {
-        override fun onBindDescription(viewHolder: AbstractDetailsDescriptionPresenter.ViewHolder, item: Any) {
+        override fun onBindDescription(viewHolder: ViewHolder, item: Any) {
             viewHolder.title.text = (item as Movie).title
             viewHolder.subtitle.text = item.studio
         }

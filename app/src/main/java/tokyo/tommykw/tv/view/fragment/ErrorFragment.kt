@@ -11,16 +11,18 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.fragment
 
 import android.os.Bundle
+import android.support.v17.leanback.app.ErrorFragment
 import android.util.Log
 import android.view.View
+import tokyo.tommykw.tv.R
 
 /*
  * This class demonstrates how to extend ErrorFragment
  */
-class ErrorFragment : android.support.v17.leanback.app.ErrorFragment() {
+class ErrorFragment : ErrorFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate")

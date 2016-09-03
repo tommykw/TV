@@ -12,7 +12,7 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.fragment
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -42,8 +42,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.GlideDrawable
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
-import tokyo.tommykw.tv.view.MainActivity
+import tokyo.tommykw.tv.Movie
+import tokyo.tommykw.tv.MovieList
+import tokyo.tommykw.tv.R
+import tokyo.tommykw.tv.Utils
+import tokyo.tommykw.tv.view.activity.DetailsActivity
+import tokyo.tommykw.tv.view.activity.MainActivity
 import tokyo.tommykw.tv.view.presenter.CardPresenter
+import tokyo.tommykw.tv.view.presenter.DetailsDescriptionPresenter
 
 import java.util.Collections
 

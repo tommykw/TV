@@ -12,20 +12,22 @@
  * the License.
  */
 
-package tokyo.tommykw.tv;
+package tokyo.tommykw.tv.view.activity
 
-import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
+import android.app.Activity
+import android.os.Bundle
+import tokyo.tommykw.tv.R
 
-public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
+/*
+ * MainActivity class that loads MainFragment
+ */
+class MainActivity : Activity() {
+    /**
+     * Called when the activity is first created.
+     */
 
-    @Override
-    protected void onBindDescription(ViewHolder viewHolder, Object item) {
-        Movie movie = (Movie) item;
-
-        if (movie != null) {
-            viewHolder.getTitle().setText(movie.getTitle());
-            viewHolder.getSubtitle().setText(movie.getStudio());
-            viewHolder.getBody().setText(movie.getDescription());
-        }
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
     }
 }

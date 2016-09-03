@@ -12,27 +12,22 @@
  * the License.
  */
 
-package tokyo.tommykw.tv
+package tokyo.tommykw.tv.view.presenter;
 
-import android.app.Activity
-import android.os.Bundle
+import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
 
-/*
- * Details activity class that loads LeanbackDetailsFragment class
- */
-class DetailsActivity : Activity() {
+import tokyo.tommykw.tv.Movie;
 
-    /**
-     * Called when the activity is first created.
-     */
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
+
+    @Override
+    protected void onBindDescription(ViewHolder viewHolder, Object item) {
+        Movie movie = (Movie) item;
+
+        if (movie != null) {
+            viewHolder.getTitle().setText(movie.getTitle());
+            viewHolder.getSubtitle().setText(movie.getStudio());
+            viewHolder.getBody().setText(movie.getDescription());
+        }
     }
-
-    companion object {
-        val SHARED_ELEMENT_NAME = "hero"
-        val MOVIE = "Movie"
-    }
-
 }
