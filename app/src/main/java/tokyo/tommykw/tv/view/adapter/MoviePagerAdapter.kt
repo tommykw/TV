@@ -3,6 +3,7 @@ package tokyo.tommykw.tv.view.adapter
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import tokyo.tommykw.tv.view.fragment.VideoItemFragment
 
 /**
  * Created by tommy on 2016/09/04.
