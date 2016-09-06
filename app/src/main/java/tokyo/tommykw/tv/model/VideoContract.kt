@@ -10,4 +10,11 @@ class VideoContract {
         const val CONTENT_AUTHORITY = "com.android.example.leanback"
         val BASE_URI = Uri.parse("content://com.android.example.leanback")
     }
+
+    interface Columns {
+        companion object {
+            val id = "id"
+            val category = "category"
+        }
+    }
 }
