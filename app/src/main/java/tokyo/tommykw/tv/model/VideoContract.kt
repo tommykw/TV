@@ -13,8 +13,15 @@ class VideoContract {
 
     interface Columns {
         companion object {
-            val id = "id"
-            val category = "category"
+            const val ID = "id"
+            const val CATEGORY = "category"
+            const val TITLE = "title"
+            const val CONTENT_URL = "content_url"
+            const val DESCRIPTION = "description"
+            const val RATING = "rating"
+            const val THUMB_URL = "thumb_url"
+            const val TAGS = "tags"
+            const val YEAR = "year"
         }
     }
 }
