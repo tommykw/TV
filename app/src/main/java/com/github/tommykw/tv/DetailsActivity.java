@@ -12,28 +12,25 @@
  * the License.
  */
 
-package tokyo.tommykw.tv.view.activity
+package com.github.tommykw.tv;
 
-import android.app.Activity
-import android.os.Bundle
-import tokyo.tommykw.tv.R
+import android.app.Activity;
+import android.os.Bundle;
 
 /*
  * Details activity class that loads LeanbackDetailsFragment class
  */
-class DetailsActivity : Activity() {
+public class DetailsActivity extends Activity {
+    public static final String SHARED_ELEMENT_NAME = "hero";
+    public static final String MOVIE = "Movie";
 
     /**
      * Called when the activity is first created.
      */
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
-    }
-
-    companion object {
-        val SHARED_ELEMENT_NAME = "hero"
-        val MOVIE = "Movie"
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_details);
     }
 
 }

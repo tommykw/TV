@@ -1,4 +1,4 @@
-package tokyo.tommykw.tv;
+package com.github.tommykw.tv;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

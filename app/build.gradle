@@ -1,18 +1,14 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
-
+    buildToolsVersion "24.0.3"
     defaultConfig {
-        applicationId "tokyo.tommykw.tv"
+        applicationId "com.github.tommykw.tv"
         minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -20,33 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:recyclerview-v7:24.2.0'
-    compile 'com.android.support:leanback-v17:24.2.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.github.bumptech.glide:glide:3.4.0'
-    compile 'io.reactivex:rxkotlin:0.40.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-buildscript {
-    ext.kotlin_version = '1.0.3'
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-repositories {
-    mavenCentral()
+    compile 'com.android.support:leanback-v17:24.2.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.github.bumptech.glide:glide:3.4.+'
 }

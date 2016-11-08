@@ -1,2 +1,0 @@
-# AndroidTV
-android tv sample
