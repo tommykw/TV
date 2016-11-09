@@ -42,6 +42,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.github.tommykw.tv.activity.MainActivity;
 
 import java.util.Collections;
 import java.util.List;
