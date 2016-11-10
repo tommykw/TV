@@ -50,6 +50,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.github.tommykw.tv.activity.BrowseErrorActivity;
+import com.github.tommykw.tv.presenter.CardPresenter;
 
 public class MainFragment extends BrowseFragment {
     private static final String TAG = "MainFragment";

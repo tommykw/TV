@@ -33,7 +33,7 @@
         </activity>
         <activity android:name=".DetailsActivity"/>
         <activity android:name=".PlaybackOverlayActivity"/>
-        <activity android:name=".BrowseErrorActivity"/>
+        <activity android:name=".activity.BrowseErrorActivity"/>
     </application>
 
 </manifest>
