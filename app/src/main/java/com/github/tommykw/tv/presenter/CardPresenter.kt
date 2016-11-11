@@ -6,7 +6,7 @@ import android.support.v17.leanback.widget.Presenter
 import android.view.ViewGroup
 
 import com.bumptech.glide.Glide
-import com.github.tommykw.tv.Movie
+import com.github.tommykw.tv.model.Movie
 import com.github.tommykw.tv.R
 
 class CardPresenter : Presenter() {

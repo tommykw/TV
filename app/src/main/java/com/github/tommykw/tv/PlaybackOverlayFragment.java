@@ -53,6 +53,8 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.github.tommykw.tv.activity.DetailsActivity;
+import com.github.tommykw.tv.model.Movie;
+import com.github.tommykw.tv.model.MovieList;
 import com.github.tommykw.tv.presenter.CardPresenter;
 
 import java.util.ArrayList;
@@ -105,7 +107,7 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
         mSelectedMovie = (Movie) getActivity()
                 .getIntent().getSerializableExtra(DetailsActivity.Companion.getMOVIE());
 
-        List<Movie> movies = MovieList.list;
+        List<Movie> movies = MovieList.INSTANCE.getList();
 
         for (int j = 0; j < movies.size(); j++) {
             mItems.add(movies.get(j));
@@ -293,7 +295,7 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
             item.setStudio(mItems.get(mCurrentItem).getStudio());
         }
         if (SHOW_IMAGE) {
-            updateVideoImage(mItems.get(mCurrentItem).getCardImageURI().toString());
+            updateVideoImage(mItems.get(mCurrentItem).getCardImageUri().toString());
         }
         mRowsAdapter.notifyArrayItemRangeChanged(0, 1);
         mPlaybackControlsRow.setTotalTime(getDuration());

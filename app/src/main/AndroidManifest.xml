@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DetailsActivity"/>
-        <activity android:name=".PlaybackOverlayActivity"/>
+        <activity android:name=".activity.PlaybackOverlayActivity"/>
         <activity android:name=".activity.BrowseErrorActivity"/>
     </application>
 

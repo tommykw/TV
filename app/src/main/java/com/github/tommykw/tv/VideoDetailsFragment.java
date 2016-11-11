@@ -44,6 +44,9 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.github.tommykw.tv.activity.DetailsActivity;
 import com.github.tommykw.tv.activity.MainActivity;
+import com.github.tommykw.tv.activity.PlaybackOverlayActivity;
+import com.github.tommykw.tv.model.Movie;
+import com.github.tommykw.tv.model.MovieList;
 import com.github.tommykw.tv.presenter.CardPresenter;
 import com.github.tommykw.tv.presenter.DetailsDescriptionPresenter;
 
@@ -191,7 +194,7 @@ public class VideoDetailsFragment extends DetailsFragment {
 
     private void setupMovieListRow() {
         String subcategories[] = {getString(R.string.related_movies)};
-        List<Movie> list = MovieList.list;
+        List<Movie> list = MovieList.INSTANCE.getList();
 
         Collections.shuffle(list);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());

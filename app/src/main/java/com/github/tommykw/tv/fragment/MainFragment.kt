@@ -33,8 +33,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.GlideDrawable
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
-import com.github.tommykw.tv.Movie
-import com.github.tommykw.tv.MovieList
+import com.github.tommykw.tv.model.Movie
+import com.github.tommykw.tv.model.MovieList
 import com.github.tommykw.tv.R
 import com.github.tommykw.tv.activity.BrowseErrorActivity
 import com.github.tommykw.tv.activity.DetailsActivity
@@ -171,13 +171,12 @@ class MainFragment : BrowseFragment() {
     }
 
     private inner class ItemViewSelectedListener : OnItemViewSelectedListener {
-        override fun onItemSelected(itemViewHolder: Presenter.ViewHolder, item: Any,
-                                    rowViewHolder: RowPresenter.ViewHolder, row: Row) {
+        override fun onItemSelected(itemViewHolder: Presenter.ViewHolder?, item: Any?,
+                                    rowViewHolder: RowPresenter.ViewHolder?, row: Row) {
             if (item is Movie) {
-                backgroundURI = item.backgroundImageURI
+                backgroundURI = item.backgroundImageUri
                 startBackgroundTimer()
             }
-
         }
     }
 
