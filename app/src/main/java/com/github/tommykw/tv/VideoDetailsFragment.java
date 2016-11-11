@@ -42,8 +42,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.github.tommykw.tv.activity.DetailsActivity;
 import com.github.tommykw.tv.activity.MainActivity;
 import com.github.tommykw.tv.presenter.CardPresenter;
+import com.github.tommykw.tv.presenter.DetailsDescriptionPresenter;
 
 import java.util.Collections;
 import java.util.List;
@@ -81,7 +83,7 @@ public class VideoDetailsFragment extends DetailsFragment {
         prepareBackgroundManager();
 
         mSelectedMovie = (Movie) getActivity().getIntent()
-                .getSerializableExtra(DetailsActivity.MOVIE);
+                .getSerializableExtra(DetailsActivity.Companion.getMOVIE());
         if (mSelectedMovie != null) {
             setupAdapter();
             setupDetailsOverviewRow();
@@ -170,14 +172,14 @@ public class VideoDetailsFragment extends DetailsFragment {
 
         // Hook up transition element.
         detailsPresenter.setSharedElementEnterTransition(getActivity(),
-                DetailsActivity.SHARED_ELEMENT_NAME);
+                DetailsActivity.Companion.getSHARED_ELEMENT_NAME());
 
         detailsPresenter.setOnActionClickedListener(new OnActionClickedListener() {
             @Override
             public void onActionClicked(Action action) {
                 if (action.getId() == ACTION_WATCH_TRAILER) {
                     Intent intent = new Intent(getActivity(), PlaybackOverlayActivity.class);
-                    intent.putExtra(DetailsActivity.MOVIE, mSelectedMovie);
+                    intent.putExtra(DetailsActivity.Companion.getMOVIE(), mSelectedMovie);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getActivity(), action.toString(), Toast.LENGTH_SHORT).show();
@@ -222,7 +224,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                 Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(
                         getActivity(),
                         ((ImageCardView) itemViewHolder.view).getMainImageView(),
-                        DetailsActivity.SHARED_ELEMENT_NAME).toBundle();
+                        DetailsActivity.Companion.getSHARED_ELEMENT_NAME()).toBundle();
                 getActivity().startActivity(intent, bundle);
             }
         }

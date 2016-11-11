@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsActivity"/>
+        <activity android:name=".activity.DetailsActivity"/>
         <activity android:name=".PlaybackOverlayActivity"/>
         <activity android:name=".activity.BrowseErrorActivity"/>
     </application>

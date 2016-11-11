@@ -52,6 +52,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.github.tommykw.tv.activity.DetailsActivity;
 import com.github.tommykw.tv.presenter.CardPresenter;
 
 import java.util.ArrayList;
@@ -102,7 +103,7 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
 
         mItems = new ArrayList<Movie>();
         mSelectedMovie = (Movie) getActivity()
-                .getIntent().getSerializableExtra(DetailsActivity.MOVIE);
+                .getIntent().getSerializableExtra(DetailsActivity.Companion.getMOVIE());
 
         List<Movie> movies = MovieList.list;
 
