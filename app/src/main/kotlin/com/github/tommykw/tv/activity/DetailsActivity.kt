@@ -5,7 +5,7 @@ import android.os.Bundle
 
 import com.github.tommykw.tv.R
 
-class DetailsActivity : Activity() {
+class DetailsActivity : BaseActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)

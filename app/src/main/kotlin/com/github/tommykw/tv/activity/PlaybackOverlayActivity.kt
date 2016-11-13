@@ -18,7 +18,7 @@ import com.github.tommykw.tv.fragment.PlaybackOverlayFragment
 import com.github.tommykw.tv.R
 import com.github.tommykw.tv.model.Movie
 
-class PlaybackOverlayActivity : Activity(), PlaybackOverlayFragment.OnPlayPauseClickedListener {
+class PlaybackOverlayActivity : BaseActivity(), PlaybackOverlayFragment.OnPlayPauseClickedListener {
 
     private val mVideoView by lazy { findViewById(R.id.videoView) as VideoView }
     private var mPlaybackState = LeanbackPlaybackState.IDLE

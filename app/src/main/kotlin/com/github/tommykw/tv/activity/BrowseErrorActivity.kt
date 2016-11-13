@@ -2,12 +2,11 @@ package com.github.tommykw.tv.activity
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import com.github.tommykw.tv.fragment.ErrorFragment
 import com.github.tommykw.tv.R
 import com.github.tommykw.tv.fragment.SpinnerFragment
 
-class BrowseErrorActivity : AppCompatActivity() {
+class BrowseErrorActivity : BaseActivity() {
     private lateinit var errorFragment: ErrorFragment
     private lateinit var spinnerFragment: SpinnerFragment
 

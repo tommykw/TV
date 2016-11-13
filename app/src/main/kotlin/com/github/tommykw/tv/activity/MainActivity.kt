@@ -6,7 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.github.tommykw.tv.R
 
-class MainActivity : Activity() {
+class MainActivity : BaseActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
