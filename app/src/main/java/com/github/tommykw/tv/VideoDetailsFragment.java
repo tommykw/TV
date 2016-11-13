@@ -49,6 +49,7 @@ import com.github.tommykw.tv.model.Movie;
 import com.github.tommykw.tv.model.MovieList;
 import com.github.tommykw.tv.presenter.CardPresenter;
 import com.github.tommykw.tv.presenter.DetailsDescriptionPresenter;
+import com.github.tommykw.tv.util.Utils;
 
 import java.util.Collections;
 import java.util.List;
