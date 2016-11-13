@@ -14,7 +14,7 @@ import android.widget.VideoView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
-import com.github.tommykw.tv.PlaybackOverlayFragment
+import com.github.tommykw.tv.fragment.PlaybackOverlayFragment
 import com.github.tommykw.tv.R
 import com.github.tommykw.tv.model.Movie
 
