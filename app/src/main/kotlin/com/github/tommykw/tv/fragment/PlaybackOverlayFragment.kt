@@ -1,6 +1,7 @@
 package com.github.tommykw.tv.fragment
 
 import android.app.Activity
+import android.content.Context
 
 import android.media.MediaMetadataRetriever
 import android.os.Build
@@ -84,8 +85,7 @@ class PlaybackOverlayFragment : PlaybackOverlayFragment() {
         }
     }
 
-    @SuppressWarnings("deprecation")
-    override fun onAttach(context: Activity) {
+    override fun onAttach(context: Context?) {
         super.onAttach(context)
         if (context is OnPlayPauseClickedListener) {
             mCallback = context

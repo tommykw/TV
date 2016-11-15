@@ -1,10 +1,11 @@
 package com.github.tommykw.tv.activity
 
 import android.os.Bundle
-import android.os.Handler
 import com.github.tommykw.tv.fragment.ErrorFragment
 import com.github.tommykw.tv.R
 import com.github.tommykw.tv.fragment.SpinnerFragment
+import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
 
 class BrowseErrorActivity : BaseActivity() {
     private lateinit var errorFragment: ErrorFragment
@@ -25,10 +26,10 @@ class BrowseErrorActivity : BaseActivity() {
             commit()
         }
 
-        Handler().postDelayed({
+        Observable.interval(TIMER_DELAY.toLong(), TimeUnit.MILLISECONDS).subscribe({
             fragmentManager.beginTransaction().remove(spinnerFragment).commit()
             errorFragment.setErrorContent()
-        }, TIMER_DELAY.toLong())
+        }, { e -> })
     }
 
     companion object {
